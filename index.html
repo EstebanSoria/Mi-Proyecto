@@ -1,11 +1,748 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Maipú Usados</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./styles/styles.css" />
 </head>
+
 <body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-black border-bottom border-body" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand m-3" href="./index.html">
+          <img src="./assets/img/logo.png" alt="logo de la pagina" class="logo" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
+            <li class="nav-item">
+              <a class="nav-link link-nav" href="./pages/error404.html">¿CÓMO FUNCIONA?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-nav" href="./pages/error404.html">INSPECCIÓN</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-nav" href="./pages/error404.html">FINANCIACIÓN</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-nav" href="./pages/error404.html">CANAL DE DENUNCIAS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-nav" href="./pages/error404.html">CONTACTO</a>
+            </li>
+          </ul>
+          <div class="gap-4 d-flex justify-content-center">
+            <button class="btn btn-lg btn-warning rounded-pill" type="button">
+              COMPRA
+            </button>
+            <button class="btn btn-lg btn-warning rounded-pill" type="button">
+              VENTA
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="d-lg-none">
+      <button class="btn btn-warning d-flex mx-auto mt-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Filtrar Busqueda</button>
+      <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header">
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="d-flex">
+            <div class="mt-1 w-100">
+              <h5>Ordenar por</h5>
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Todos</option>
+                <option value="1">Mayor precio</option>
+                <option value="2">Menor precio</option>
+                <option value="3">Mas nuevo</option>
+                <option value="4">Mas antiguos</option>
+                <option value="5">Mayor kilometraje</option>
+                <option value="6">Menor kilometraje</option>
+              </select>
+              <p class="mt-3"><b>Tipo de Vehiculos</b></p>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="flexCheckDefault"
+                />
+                <label class="form-check-label" for="flexCheckDefault">
+                  Autos
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="flexCheckChecked"
+                  checked
+                />
+                <label class="form-check-label" for="flexCheckChecked">
+                  Motos
+                </label>
+              </div>
+              <label for="customRange1" class="form-label mt-3">
+                <b>Precio</b></label
+              >
+              <input type="range" class="form-range" id="customRange1" />
+              <p>12.075.000 — 54.620.000</p>
+              <button
+                type="button"
+                class="btn btn-dark text-warning"
+                style="
+                  --bs-btn-padding-y: 0.25rem;
+                  --bs-btn-padding-x: 0.5rem;
+                  --bs-btn-font-size: 1rem;
+                "
+              >
+                Reiniciar
+              </button>
+              <div>
+                <label for="customRange1" class="form-label mt-3">
+                  <b>kilometraje</b></label
+                >
+                <input type="range" class="form-range" id="customRange1" />
+                <p>4.800km — 137.200km</p>
+                <button
+                  type="button"
+                  class="btn btn-dark text-warning"
+                  style="
+                    --bs-btn-padding-y: 0.25rem;
+                    --bs-btn-padding-x: 0.5rem;
+                    --bs-btn-font-size: 1rem;
+                  "
+                >
+                  Reiniciar
+                </button>
+              </div>
+              <p><b>Marca</b></p>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="chevrolet"
+                />
+                <label class="form-check-label" for="chevrolet">
+                  Chevrolet (12)
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="volkswagen"
+                />
+                <label class="form-check-label" for="volkswagen">
+                  Volkswagen (11)
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="ford"
+                />
+                <label class="form-check-label" for="ford"> Ford (10) </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="fiat"
+                />
+                <label class="form-check-label" for="fiat"> Fiat (9) </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="toyota"
+                />
+                <label class="form-check-label" for="toyota"> Toyota (8) </label>
+              </div>
+              <a href="#" class="d-block mt-2">Ver 8 más</a>
     
+              <p class="mt-3"><b>Años</b></p>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="chevrolet"
+                />
+                <label class="form-check-label" for="chevrolet"> 2019(4) </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="volkswagen"
+                />
+                <label class="form-check-label" for="volkswagen"> 2020(4) </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="ford"
+                />
+                <label class="form-check-label" for="ford"> 2021(3) </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="fiat"
+                />
+                <label class="form-check-label" for="fiat"> 2022(3) </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="toyota"
+                />
+                <label class="form-check-label" for="toyota"> 2023(2) </label>
+              </div>
+              <a href="#" class="d-block mt-2">Ver 2 más</a>
+    
+              <p class="mt-3"><b>Modelos</b></p>
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Todos</option>
+                <option value="1">Elios</option>
+                <option value="2">Eco Sport</option>
+                <option value="3">Ranger</option>
+                <option value="4">Bronco</option>
+                <option value="5">Yaris</option>
+              </select>
+              <p class="mt-3"><b> Todos Combustible</b></p>
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Todos</option>
+              </select>
+              <p class="mt-3"><b>Transmisión</b></p>
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Todos</option>
+                <option value="1">Manual (6)</option>
+                <option value="2">Automática (6)</option>
+              </select>
+              <p class="mt-3"><b>Certificado</b></p>
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Selecciona</option>
+              </select>
+            </div>
+        </div>
+      </div>
+    </section>
+    <!-- INICIO CARDS -->
+        <section class="container my-5 d-flex">
+          <div id="form-pc" class="d-none mt-0 d-lg-block">
+            <div class="">
+              <div class="mt-5 formulario-pc">
+                <h5>Ordenar por</h5>
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Todos</option>
+                  <option value="1">Mayor precio</option>
+                  <option value="2">Menor precio</option>
+                  <option value="3">Mas nuevo</option>
+                  <option value="4">Mas antiguos</option>
+                  <option value="5">Mayor kilometraje</option>
+                  <option value="6">Menor kilometraje</option>
+                </select>
+                <p class="mt-3"><b>Tipo de Vehiculos</b></p>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="flexCheckDefault"
+                  />
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Autos
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="flexCheckChecked"
+                    checked
+                  />
+                  <label class="form-check-label" for="flexCheckChecked">
+                    Motos
+                  </label>
+                </div>
+                <label for="customRange1" class="form-label mt-3">
+                  <b>Precio</b></label
+                >
+                <input type="range" class="form-range" id="customRange1" />
+                <p>12.075.000 — 54.620.000</p>
+                <button
+                  type="button"
+                  class="btn btn-dark text-warning"
+                  style="
+                    --bs-btn-padding-y: 0.25rem;
+                    --bs-btn-padding-x: 0.5rem;
+                    --bs-btn-font-size: 1rem;
+                  "
+                >
+                  Reiniciar
+                </button>
+                <div>
+                  <label for="customRange1" class="form-label mt-3">
+                    <b>kilometraje</b></label
+                  >
+                  <input type="range" class="form-range" id="customRange1" />
+                  <p>4.800km — 137.200km</p>
+                  <button
+                    type="button"
+                    class="btn btn-dark text-warning"
+                    style="
+                      --bs-btn-padding-y: 0.25rem;
+                      --bs-btn-padding-x: 0.5rem;
+                      --bs-btn-font-size: 1rem;
+                    "
+                  >
+                    Reiniciar
+                  </button>
+                </div>
+                <p><b>Marca</b></p>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="chevrolet"
+                  />
+                  <label class="form-check-label" for="chevrolet">
+                    Chevrolet (12)
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="volkswagen"
+                  />
+                  <label class="form-check-label" for="volkswagen">
+                    Volkswagen (11)
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="ford"
+                  />
+                  <label class="form-check-label" for="ford"> Ford (10) </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="fiat"
+                  />
+                  <label class="form-check-label" for="fiat"> Fiat (9) </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="toyota"
+                  />
+                  <label class="form-check-label" for="toyota"> Toyota (8) </label>
+                </div>
+                <a href="#" class="d-block mt-2">Ver 8 más</a>
+      
+                <p class="mt-3"><b>Años</b></p>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="chevrolet"
+                  />
+                  <label class="form-check-label" for="chevrolet"> 2019(4) </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="volkswagen"
+                  />
+                  <label class="form-check-label" for="volkswagen"> 2020(4) </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="ford"
+                  />
+                  <label class="form-check-label" for="ford"> 2021(3) </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="fiat"
+                  />
+                  <label class="form-check-label" for="fiat"> 2022(3) </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="toyota"
+                  />
+                  <label class="form-check-label" for="toyota"> 2023(2) </label>
+                </div>
+                <a href="#" class="d-block mt-2">Ver 2 más</a>
+      
+                <p class="mt-3"><b>Modelos</b></p>
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Todos</option>
+                  <option value="1">Elios</option>
+                  <option value="2">Eco Sport</option>
+                  <option value="3">Ranger</option>
+                  <option value="4">Bronco</option>
+                  <option value="5">Yaris</option>
+                </select>
+                <p class="mt-3"><b> Todos Combustible</b></p>
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Todos</option>
+                </select>
+                <p class="mt-3"><b>Transmisión</b></p>
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Todos</option>
+                  <option value="1">Manual (13)</option>
+                  <option value="2">Automática (3)</option>
+                </select>
+                <p class="mt-3"><b>Certificado</b></p>
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Selecciona</option>
+                </select>
+              </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-9 ">
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <article class="col">
+              <div class="card text-center h-100 ">
+                <img src="https://maipuusados.com.ar/wp-content/uploads/sites/5/2024/09/APC_9633-1600x1200-1.jpg"
+                  class="card-img-top card-foto" alt="Ford Eco Sport" />
+                <div class="card-body">
+                  <h5 class="card-title"><a href="#" class="letra">Eco Sport</a></h5>
+                  <p class="card-text">2019</p>
+                  <p class="card-text">Manual</p>
+                  <p class="card-text">118.160 km</p>
+                  <p class="card-text">$ 20.910.000</p>
+                </div>
+                <div class="card-footer d-grid bg-transparent border-0">
+                  <a class="btn btn-warning btn-vermas rounded-pill" href="./pages/error404.html">
+                    Ver más
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="col">
+              <div class="card text-center h-100">
+                <img src="https://maipuusados.com.ar/wp-content/uploads/sites/5/2024/09/APC_9499-1600x1200-1.jpg"
+                  class="card-img-top card-foto" alt="Jeep Renegade" />
+                <div class="card-body">
+                  <h5 class="card-title"><a href="#" class="letra">Renegade</a></h5>
+                  <p class="card-text">2017</p>
+                  <p class="card-text">Automática</p>
+                  <p class="card-text">82.025 km</p>
+                  <p class="card-text">$ 23.000.000</p>
+                </div>
+                <div class="card-footer d-grid bg-transparent border-0">
+                  <a class="btn btn-warning btn-vermas rounded-pill" href="./pages/error404.html">
+                    Ver más
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="col">
+              <div class="card text-center h-100">
+                <img src="https://maipuusados.com.ar/wp-content/uploads/sites/5/2024/09/APC_9038-1600x1200-1.jpg"
+                  class="card-img-top card-foto" alt="Toyota" />
+                <div class="card-body">
+                  <h5 class="card-title"><a href="#" class="letra">Etios</a></h5>
+                  <p class="card-text">2023</p>
+                  <p class="card-text">Manual</p>
+                  <p class="card-text">85.865 km</p>
+                  <p class="card-text">$ 21.500.000</p>
+                </div>
+                <div class="card-footer d-grid bg-transparent border-0">
+                  <a class="btn btn-warning btn-vermas rounded-pill" href="./pages/error404.html">
+                    Ver más
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="col">
+              <div class="card text-center h-100 ">
+                <img src="https://maipuusados.com.ar/wp-content/uploads/sites/5/2024/10/APC_0613-1600x1200-1-jpg.avif"
+                  class="card-img-top card-foto" alt="Audi Q5" />
+                <div class="card-body">
+                  <h5 class="card-title"><a href="#" class="letra">Q5</a></h5>
+                  <p class="card-text">2015</p>
+                  <p class="card-text">Automática</p>
+                  <p class="card-text">122.570 km</p>
+                  <p class="card-text">US$ 28.850</p>
+                </div>
+                <div class="card-footer d-grid bg-transparent border-0">
+                  <a class="btn btn-warning btn-vermas rounded-pill" href="./pages/error404.html">
+                    Ver más
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="col">
+              <div class="card text-center h-100">
+                <img src="https://maipuusados.com.ar/wp-content/uploads/sites/5/2024/10/APC_0393-1600x1200-1-jpg.avif"
+                  class="card-img-top card-foto" alt="Fiat cronos" />
+                <div class="card-body">
+                  <h5 class="card-title"><a href="#" class="letra">Cronos</a></h5>
+                  <p class="card-text">2023</p>
+                  <p class="card-text">Automática</p>
+                  <p class="card-text">42.125 km</p>
+                  <p class="card-text">$ 23.450.000</p>
+                </div>
+                <div class="card-footer d-grid bg-transparent border-0">
+                  <a class="btn btn-warning btn-vermas rounded-pill" href="./pages/error404.html">
+                    Ver más
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="col">
+              <div class="card text-center h-100">
+                <img src="https://maipuusados.com.ar/wp-content/uploads/sites/5/2024/10/APC_0590-1600x1200-1-jpg.avif"
+                  class="card-img-top card-foto" alt="VW Amarok" />
+                <div class="card-body">
+                  <h5 class="card-title"><a href="#" class="letra">Amarok</a></h5>
+                  <p class="card-text">2021</p>
+                  <p class="card-text">Automática</p>
+                  <p class="card-text">80.845 km</p>
+                  <p class="card-text">Próximamente</p>
+                </div>
+                <div class="card-footer d-grid bg-transparent border-0">
+                  <a class="btn btn-warning btn-vermas rounded-pill" href="./pages/error404.html">
+                    Ver más
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="col">
+              <div class="card text-center h-100">
+                <img src="https://maipuusados.com.ar/wp-content/uploads/sites/5/2024/09/APC_9726-1600x1200-1.jpg"
+                  class="card-img-top card-foto" alt="Renault Capture"/>
+                <div class="card-body">
+                  <h5 class="card-title"><a href="#" class="letra">Capture</a></h5>
+                  <p class="card-text">2018</p>
+                  <p class="card-text">Manual</p>
+                  <p class="card-text">118.450 km</p>
+                  <p class="card-text">$ 21.420.000</p>
+                </div>
+                <div class="card-footer d-grid bg-transparent border-0">
+                  <a class="btn btn-warning btn-vermas rounded-pill" href="./pages/error404.html">
+                    Ver más
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="col">
+              <div class="card text-center h-100">
+                <img src="https://maipuusados.com.ar/wp-content/uploads/sites/5/2024/09/APC_9782-1600x1200-1.jpg"
+                  class="card-img-top card-foto" alt="Fiat Toro"/>
+                <div class="card-body">
+                  <h5 class="card-title"><a href="#" class="letra">Toro</a></h5>
+                  <p class="card-text">2020</p>
+                  <p class="card-text">Manual</p>
+                  <p class="card-text">65.000 km</p>
+                  <p class="card-text">$ 32.650.000</p>
+                </div>
+                <div class="card-footer d-grid bg-transparent border-0">
+                  <a class="btn btn-warning btn-vermas rounded-pill" href="./pages/error404.html">
+                    Ver más
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="col">
+              <div class="card text-center h-100">
+                <img src="https://maipuusados.com.ar/wp-content/uploads/sites/5/2024/10/APC_0261-1600x1200-1-jpg.avif"
+                  class="card-img-top card-foto" alt="Chevrolet Cruze" />
+                <div class="card-body">
+                  <h5 class="card-title"><a href="#" class="letra">Cruze</a></h5>
+                  <p class="card-text">2021</p>
+                  <p class="card-text">Manual</p>
+                  <p class="card-text">42.800 km</p>
+                  <p class="card-text">$ 24.480.000</p>
+                </div>
+                <div class="card-footer d-grid bg-transparent border-0">
+                  <a class="btn btn-warning btn-vermas rounded-pill" href="./pages/error404.html">
+                    Ver más
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="col">
+              <div class="card text-center h-100">
+                <img src="https://maipuusados.com.ar/wp-content/uploads/sites/5/2024/10/APC_0492-1600x1200-1-jpg.avif"
+                  class="card-img-top card-foto" alt="VW Suran"/>
+                <div class="card-body">
+                  <h5 class="card-title"><a href="#" class="letra">Suran</a></h5>
+                  <p class="card-text">2019</p>
+                  <p class="card-text">Manual</p>
+                  <p class="card-text">96.645 km</p>
+                  <p class="card-text">$ 19.000.000</p>
+                </div>
+                <div class="card-footer d-grid bg-transparent border-0">
+                  <a class="btn btn-warning btn-vermas rounded-pill" href="./pages/error404.html">
+                    Ver más
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="col">
+              <div class="card text-center h-100">
+                <img src="https://maipuusados.com.ar/wp-content/uploads/sites/5/2024/10/APC_0571-1600x1200-1-jpg.avif"
+                  class="card-img-top card-foto" alt="Nissan"/>
+                <div class="card-body">
+                  <h5 class="card-title"><a href="#" class="letra">Sentra</a></h5>
+                  <p class="card-text">2017</p>
+                  <p class="card-text">Automática</p>
+                  <p class="card-text">79.450 km</p>
+                  <p class="card-text">$ 19.800.000</p>
+                </div>
+                <div class="card-footer d-grid bg-transparent border-0">
+                  <a class="btn btn-warning btn-vermas rounded-pill" href="./pages/error404.html">
+                    Ver más
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="col">
+              <div class="card text-center h-100">
+                <img src="https://maipuusados.com.ar/wp-content/uploads/sites/5/2024/10/APC_0631-1600x1200-1-jpg.avif"
+                  class="card-img-top card-foto" alt="Peugeot 3008" />
+                <div class="card-body">
+                  <h5 class="card-title"><a href="#" class="letra">3008</a></h5>
+                  <p class="card-text">2019</p>
+                  <p class="card-text">Automática</p>
+                  <p class="card-text">87.845 km</p>
+                  <p class="card-text">$ 37.897.120</p>
+                </div>
+                <div class="card-footer d-grid bg-transparent border-0">
+                  <a class="btn btn-warning btn-vermas rounded-pill" href="./pages/error404.html">
+                    Ver más
+                  </a>
+                </div>
+              </div>
+            </article>
+            
+          </div>
+        </div>
+    <div class="buttons">
+      <button type="button" class="btn btn-primary" id="btnChat">
+        <img src="./assets/img/icons8-whatsapp-48.png" alt="Chat" class="image-hover">
+      </button>
+
+      <button type="button" class="btn btn-success" id="btnMail">
+        <img src="./assets/img/icons8-correo-48.png" alt="Mail" class="image-hover">
+      </button>
+
+      <button type="button" class="btn btn-danger" id="btnCall">
+        <img src="./assets/img/icons8-teléfono-desconectado-52.png" alt="Call" class="image-hover">
+      </button>
+    </div>
+    </section>
+  </main>
+  <footer class="bg-black text-white text-center">
+    <div class="container-fluid">
+      <div class="row py-4">
+        <div class="col-12 col-lg-3 mb-4">
+          <h5>DIRECCIÓN</h5>
+          <p>Av. Colón 3950, Córdoba, Argentina.</p>
+        </div>
+        <div class="col-12 col-lg-3 mb-4">
+          <h5>HORARIOS DE ATENCIÓN</h5>
+          <p>Lunes a Viernes: 08:30 a 19:00 hs.</p>
+          <p>Sábados: 9:00 a 13:00 hs y 16:00 a 19:00 hs.</p>
+        </div>
+        <div class="col-12 col-lg-3 mb-4">
+          <div class="row">
+            <div class="col-12">
+              <h5>CONTACTO</h5>
+              <p>0810-888-62478</p>
+            </div>
+            <div class="col-12">
+              <h5>¡SEGUINOS!</h5>
+              <a class="text-decoration-none text-white" href="https://www.facebook.com/UsadosMaipu">
+                <i class="fa-brands m-2 fa-facebook fa-2xl"></i>
+              </a>
+              <a class="text-decoration-none text-white" href="https://www.instagram.com/maipuusados/">
+                <i class="fa-brands m-2 fa-instagram fa-2xl"></i>
+              </a>
+              <a class="text-decoration-none text-white" href="https://x.com/MundoMaipu">
+                <i class="fa-brands m-2 fa-twitter fa-2xl"></i>
+              </a>
+              <a class="text-decoration-none text-white" href="https://www.youtube.com/user/MUNDOMAIPUTV">
+                <i class="fa-brands m-2 fa-youtube fa-2xl"></i>
+              </a>
+              <a class="text-decoration-none text-white" href="https://www.linkedin.com/company/mundo-maipu">
+                <i class="fa-brands m-2 fa-linkedin fa-2xl"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-3 mb-4">
+          <img
+            src="https://maipuusados.com.ar/wp-content/uploads/sites/5/2021/08/Maipu-Usados-logo-nuevo-blanco.png.webp"
+            alt="logo blanco footer" width="150" />
+        </div>
+      </div>
+
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <!-- script de font awesome -->
+  <script src="https://kit.fontawesome.com/e23bd1dc39.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
